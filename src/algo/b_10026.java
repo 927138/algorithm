@@ -59,7 +59,7 @@ public class b_10026 {
 		int dy[] = {-1, 1, 0, 0};
 //		System.out.println(x + ", " + y);
 		
-		if(visit[x][y]) return;
+//		if(visit[x][y]) return;
 		
 		visit[x][y] = true;
 		for(int i=0; i<4; i++) {
