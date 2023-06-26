@@ -16,6 +16,7 @@ public class b_1541 {
 		String str_add = "0";
 		String str_sub = "0";
 		
+		
 		// '-'가 있다면 첫번째 '-'기준으로 문자열을 나눔.
 		if(str.indexOf("-") > 0) {
 			str_add = str.substring(0, str.indexOf("-"));
