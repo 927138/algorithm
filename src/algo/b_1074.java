@@ -25,9 +25,7 @@ public class b_1074 {
 	
 	static void def(int pow, int r, int c) {
 		int div = pow/2;
-		
-//		System.out.println(div);
-		System.out.println(pow +", " + r + ", " + c + ", " + value);
+
 		if(pow == 1) {
 			return;
 		}
