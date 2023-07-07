@@ -50,7 +50,8 @@ public class b_1197 {
 		while(!pq.isEmpty()) {
 			Node nd = pq.poll();
 			
-//			if(visit[nd.start]) continue;
+			// 1 - 3,  3 - 1에 대한 사이클 방지
+			if(visit[nd.start]) continue;
 			
 			visit[nd.start] = true;
 			weight += nd.weight;
