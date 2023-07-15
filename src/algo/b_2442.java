@@ -4,26 +4,28 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class b_17626 {
+public class b_2442 {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringBuilder sb = new StringBuilder();
 		
 		int N = Integer.parseInt(br.readLine());
-		int arr[] = new int[N+1];
 		
 		
-		for(int i=1; i*i <= N; i++) {
-			arr[i*i] = 1;
-		}
-		for(int i=2; i<=N; i++) {
+		for(int i=1; i<=N; i++) {
+			int space = N - i;
+//			System.out.println(space);
+			for(int j=0; j<space; j++) {
+				sb.append(" ");
+			}
+			for(int j=0; j<2*i-1; j++) {
+				sb.append("*");
+			}
 			
+			sb.append("\n");
 		}
-		
-		for(int i : arr) {
-			System.out.print(i + " ");
-		}
+		System.out.print(sb);
 	}
-
 }

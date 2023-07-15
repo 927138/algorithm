@@ -3,6 +3,8 @@ package algo;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
 
@@ -13,24 +15,33 @@ public class b_3190 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st;
 		
+		Deque<int []> dq = new LinkedList<>();
 		
 		int N = Integer.parseInt(br.readLine());
 		int K = Integer.parseInt(br.readLine());
 		
-		LinkedList<int[]> l = new LinkedList<>();
-		
-		int board[][] = new int[N][N];
+		ArrayList<int []> apple = new ArrayList<>();
 		for(int i=0; i<K; i++) {
 			st = new StringTokenizer(br.readLine());
+			
 			int x = Integer.parseInt(st.nextToken());
 			int y = Integer.parseInt(st.nextToken());
-			board[x-1][y-1] = 1;
+			
+			apple.add(new int[] {x, y});
 		}
 		
-		int a[] = {1,2};
- 		l.add(a);
-		int b[] = l.poll();
- 		System.out.println(b[0] + ", " + b[1]);
+		System.out.println(apple.indexOf(new int[] {2, 5}));
+//		System.out.println(apple.contains(2, 4));
+		System.out.println(apple.contains(new int[] {2, 5}));
+		int L = Integer.parseInt(br.readLine());
+		for(int i=0; i<L; i++) {
+			st = new StringTokenizer(br.readLine());
+			int x = Integer.parseInt(st.nextToken());
+			char ch = st.nextToken().charAt(0);
+			
+		}
+		
+		
 		
 	}
 
