@@ -32,14 +32,18 @@ public class b_13164 {
 		for(int i=0; i<N-1; i++) {
 			k.add(n.get(i+1) - n.get(i));
 		}Collections.sort(k);
+//		System.out.println(n);
+//		System.out.println(k);
 		
+		// 구간별 오름차순 된 array k에 대하여 N-K만큼 반복하여 더한다
+		// 예제결과) (5,6) + (1,3)
+		//      >> (1,3), (5,6), (10)
+		//      >>  3개조를 만들면서 최소 비용을 만드는 조를 만듬. 
 		int cost = 0;
 		for(int i=0; i<N-K; i++) {
 			cost += k.get(i);
 		}
 		System.out.println(cost);
-		System.out.println(n);
-		System.out.println(k);
 	}
 
 }
