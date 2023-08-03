@@ -4,21 +4,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.LinkedList;
-import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class b_5567 {
 	
-	private static class node{
-		int r;
-		int w;
-		
-		node(int r, int w){
-			this.r = r;
-			this.w = w;
-		}
-	}
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -28,9 +19,9 @@ public class b_5567 {
 		int M = Integer.parseInt(br.readLine());
 		
 		ArrayList<Integer> list[] = new ArrayList[N+1];
-		boolean visit[] = new boolean[N+1];
+		int visit[] = new int[N+1];
 		
-		for(int i=1; i<=N; i++) {
+		for(int i=1; i<N+1; i++) {
 			list[i] = new ArrayList<>();
 		}
 		
@@ -39,46 +30,37 @@ public class b_5567 {
 			
 			int a = Integer.parseInt(st.nextToken());
 			int b = Integer.parseInt(st.nextToken());
+			
 			list[a].add(b);
 			list[b].add(a);
 		}
-//		for(int i=1; i<=N; i++) {
-//			System.out.println(i +" : "+list[i]);
-//		}
 		
 		System.out.println(bfs(list, visit));
 	}
 	
-	static int bfs(ArrayList<Integer> list[], boolean visit[]) {
+	static int bfs(ArrayList<Integer> list[], int visit[]) {
+//		int arr[] = new int[2];
+//		Deque<int[]> dq = new LinkedList<>();
+		Deque<Integer> dq = new LinkedList<>();
+		visit[1] = 1;
+//		dq.offer(new int[] {1, 0});
+		dq.offer(1);
 		
-		Queue<node> q = new LinkedList<>();
 		int count = 0;
-		visit[1] = true;
-		
-		for(int i=0; i<list[1].size(); i++) {
-			if(visit[list[1].get(i)]) continue;
-			q.add(new node(list[1].get(i), 1));
-			visit[list[1].get(i)] = true;
+		while(!dq.isEmpty()) {
+			int x = dq.poll();
+			if(visit[x] > 3) continue;
 			
-//			System.out.println(list[1].get(i));
-		}
-		
-		while(!q.isEmpty()) {
-			int r = q.peek().r;
-			int w = q.peek().w;
-			visit[r] = true;
-			
-			System.out.println(r + "m " + w);
-			q.poll();
 			count++;
-			
-			for(int i=0; i<list[r].size(); i++) {
-				if(visit[list[r].get(i)]) continue;
-				if(w > 1) continue;
+			for(int i : list[x]) {
+				if(visit[i] > 0) continue;
 				
-				q.add(new node(list[r].get(i), w+1));
+				dq.offer(i);
+				visit[i] = visit[x] + 1;
 			}
+//			System.out.println(x);
 		}
-		return count;
+		
+		return count-1;
 	}
 }

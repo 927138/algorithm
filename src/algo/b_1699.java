@@ -27,10 +27,8 @@ public class b_1699 {
 					arr[i] = Math.min(arr[i], arr[(int)Math.pow(j, 2)] + arr[i-(int)Math.pow(j, 2)]);
 				}
 			}
-			System.out.println(i + ", " +arr[i]);
 		}
-			
-		
+		System.out.println(arr[N]);
 	}
 
 }
