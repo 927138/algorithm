@@ -21,7 +21,7 @@ public class b_1253 {
 			arr[i] = Integer.parseInt(st.nextToken());
 		}Arrays.sort(arr);
 	
-		
+		   
 		int count = 0;
 		for(int i=0; i<N; i++) {
 			int l = 0;
