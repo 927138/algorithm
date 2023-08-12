@@ -19,7 +19,7 @@ public class avg_score {
 			hap += num;
 			if(max < num) max = num;
 		}
-		dfdf
+		
 		System.out.println((double)hap/count / max * 100);
 	}
 }
