@@ -22,13 +22,13 @@ public class b_11722 {
 			arr[i] = Integer.parseInt(st.nextToken());
 		}
 		
-		for(int i=1; i<N; i++){
-			if(arr[i-1] > arr[i] && dp[i] <dp[j]) {
-				dp[i] = dp[i-1] + 1;
-			}else {
-				dp[i] = dp[i-1];
-			}
-		}System.out.println(dp[N-1]);
+//		for(int i=1; i<N; i++){
+//			if(arr[i-1] > arr[i] && dp[i] <dp[j]) {
+//				dp[i] = dp[i-1] + 1;
+//			}else {
+//				dp[i] = dp[i-1];
+//			}
+//		}System.out.println(dp[N-1]);
 		
 		
 	}
