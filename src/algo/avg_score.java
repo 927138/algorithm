@@ -19,7 +19,11 @@ public class avg_score {
 			hap += num;
 			if(max < num) max = num;
 		}
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> 2ee2471ca44ee0da9ea15327de423ccd2150af55
 		System.out.println((double)hap/count / max * 100);
 	}
 }
