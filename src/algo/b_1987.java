@@ -54,7 +54,7 @@ public class b_1987 {
 			
 			int value = arr[xx][yy];
 			if(!visit[value]) {
-				visit[arr[x][y]] = true;
+				visit[value] = true;
 				dfs(arr, visit, xx, yy, depth+1);
 				visit[value] = false;
 			}
