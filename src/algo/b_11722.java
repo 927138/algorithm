@@ -20,8 +20,20 @@ public class b_11722 {
 		st = new StringTokenizer(br.readLine());
 		for(int i=0; i<N; i++) {
 			arr[i] = Integer.parseInt(st.nextToken());
+			dp[i] = 1;
 		}
 		
+		int max = 0;
+		for(int i=0; i<N; i++) {
+			for(int j=0; j<i; j++) {
+				if(arr[j] > arr[i]) dp[i] = Math.max(dp[i], dp[j]+1);
+				
+				
+			}
+			max = Math.max(max, dp[i]);
+//			System.out.println(dp[i]);
+		}
+		System.out.println(max);
 //		for(int i=1; i<N; i++){
 //			if(arr[i-1] > arr[i] && dp[i] <dp[j]) {
 //				dp[i] = dp[i-1] + 1;
